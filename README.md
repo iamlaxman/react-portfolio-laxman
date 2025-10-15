@@ -13,7 +13,7 @@
 
 👨‍💻 A modern and eye-catching developer portfolio showcasing my work as an ethical hacker, UI/UX developer, and software developer based in Ratuwamai-10, Morang, Nepal.
 
-### ✨ [Live Demo](https://www.laxmanpoudel.com.np)
+### ✨ [Live Demo](https://react-portfolio-laxman.vercel.app)
 
 ## About This Project
 
@@ -107,5 +107,6 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 - [Tailwind CSS Documentation](https://tailwindcss.com/docs)
 
 ---
+
 
 Developed with ❤️ by [Laxman Poudel](https://www.laxmanpoudel.com.np)
