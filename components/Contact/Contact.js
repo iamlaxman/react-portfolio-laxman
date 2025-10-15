@@ -4,7 +4,6 @@ import toast, { Toaster } from "react-hot-toast";
 import Fade from "react-reveal/Fade";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import mail from "./mailer";
 import styles from "./Contact.module.scss";
 import { MENULINKS } from "../../constants";
 
@@ -62,7 +61,7 @@ const Contact = () => {
     setFormData(initialState);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const { name, email, message } = {
@@ -77,19 +76,35 @@ const Contact = () => {
     }
 
     setIsSending(true);
-    mail({ name, email, message })
-      .then((res) => {
-        if (res.status === 200) {
-          setMailerResponse("success");
-          emptyForm();
-        } else {
-          setMailerResponse("error");
+    
+    // Prepare form data for FormSubmit.co
+    const formDataToSend = new FormData();
+    formDataToSend.append("name", name);
+    formDataToSend.append("email", email);
+    formDataToSend.append("message", message);
+    formDataToSend.append("_replyto", email);
+    formDataToSend.append("_subject", `New message from ${name} via portfolio`);
+    formDataToSend.append("_captcha", "false"); // Disable captcha for better UX
+
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/ethical.laxman@gmail.com", {
+        method: "POST",
+        body: formDataToSend,
+        headers: {
+          "Accept": "application/json"
         }
-      })
-      .catch((err) => {
-        setMailerResponse("error");
-        console.error(err);
       });
+
+      if (response.ok) {
+        setMailerResponse("success");
+        emptyForm();
+      } else {
+        setMailerResponse("error");
+      }
+    } catch (err) {
+      setMailerResponse("error");
+      console.error(err);
+    }
   };
 
   useEffect(() => {
@@ -268,7 +283,7 @@ const Contact = () => {
             </h1>
           </div>
           <h2 className="text-[1.65rem] font-medium md:max-w-lg w-full mt-2 staggered-reveal">
-            Get In Touch.{" "}
+            Have a project in mind or want to discuss potential opportunities? Feel free to reach out to me at <a href="mailto:ethical.laxman@gmail.com" className="text-purple underline">ethical.laxman@gmail.com</a>.
           </h2>
         </div>
 
@@ -293,7 +308,7 @@ const Contact = () => {
 
             <div className="relative mt-14">
               <input
-                type="text"
+                type="email"
                 id="email"
                 className="block w-full h-12 sm:h-14 px-4 text-xl sm:text-2xl font-mono outline-none border-2 border-purple bg-transparent rounded-[0.6rem] transition-all duration-200"
                 value={formData.email}

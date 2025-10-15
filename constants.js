@@ -1,15 +1,15 @@
 export const METADATA = {
-  author: "Shubh Porwal",
-  title: "Portfolio | Shubh Porwal",
+  author: "Laxman Poudel",
+  title: "Portfolio | Laxman Poudel",
   description:
-    "Shubh Porwal is a passionate Frontend Engineer, dedicated to crafting aesthetic and modern apps that captivate and engage users.",
-  siteUrl: "https://www.shubhporwal.me/",
-  twitterHandle: "@shubhporwal24",
+    "Laxman Poudel is an ethical hacker, UI/UX developer, and software developer based in Ratuwamai-10, Morang, Nepal, dedicated to crafting aesthetic and modern apps that captivate and engage users.",
+  siteUrl: "https://www.laxmanpoudel.com.np/",
+  twitterHandle: "@laxmanpoudel",
   keywords: [
-    "Shubh Porwal",
-    "Frontend Engineer",
-    "React Native Engineer",
-    "Software Engineer",
+    "Laxman Poudel",
+    "Ethical Hacker",
+    "UI/UX Developer",
+    "Software Developer",
     "Portfolio",
     "Devfolio",
     "Folio",
@@ -44,7 +44,9 @@ export const MENULINKS = [
 ];
 
 export const TYPED_STRINGS = [
-  "A pragmatic Frontend Engineer",
+  "An ethical hacker",
+  "A UI/UX developer",
+  "A software developer",
   "I build things for the web",
   "I create aesthetic and modern apps",
 ];
@@ -52,23 +54,23 @@ export const TYPED_STRINGS = [
 export const SOCIAL_LINKS = [
   {
     name: "mail",
-    url: "mailto: shubhporwal73@gmail.com",
+    url: "mailto: ethical.laxman@gmail.com",
   },
   {
     name: "linkedin",
-    url: "https://www.linkedin.com/in/shubhporwal/",
+    url: "https://www.linkedin.com/in/laxman-poudel/",
   },
   {
     name: "github",
-    url: "https://github.com/shubh73",
+    url: "https://github.com/laxmanpoudel",
   },
   {
     name: "instagram",
-    url: "https://www.instagram.com/shubhii73/",
+    url: "https://www.instagram.com/laxmanpoudel/",
   },
   {
     name: "twitter",
-    url: "https://x.com/shubhporwal24",
+    url: "https://x.com/laxmanpoudel",
   },
 ];
 
